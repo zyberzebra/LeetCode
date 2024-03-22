@@ -15,28 +15,28 @@ class PalindromeLinkedListTest {
 
     static Stream<Arguments> palindromeSource() {
         return Stream.of(
-                arguments(new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))))),
-                arguments(new ListNode(1, new ListNode(1))),
-                arguments(new ListNode(1))
+                arguments(new PalindromeLinkedList.ListNode(1, new PalindromeLinkedList.ListNode(2, new PalindromeLinkedList.ListNode(2, new PalindromeLinkedList.ListNode(1))))),
+                arguments(new PalindromeLinkedList.ListNode(1, new PalindromeLinkedList.ListNode(1))),
+                arguments(new PalindromeLinkedList.ListNode(1))
         );
     }
 
     @ParameterizedTest
     @MethodSource("palindromeSource")
-    void detectValidPalindrome(ListNode input) {
+    void detectValidPalindrome(PalindromeLinkedList.ListNode input) {
         assertThat(PalindromeLinkedList.isPalindrome(input)).isTrue();
     }
 
     static Stream<Arguments> noPalindromeSource() {
         return Stream.of(
-                arguments(new ListNode(1, new ListNode(2)))
+                arguments(new PalindromeLinkedList.ListNode(1, new PalindromeLinkedList.ListNode(2)))
         );
     }
 
     @ParameterizedTest
     @MethodSource("noPalindromeSource")
     @NullSource
-    void detectInvalidPalindrome(ListNode input) {
+    void detectInvalidPalindrome(PalindromeLinkedList.ListNode input) {
         assertThat(PalindromeLinkedList.isPalindrome(input)).isFalse();
     }
 
