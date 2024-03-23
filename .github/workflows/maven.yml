@@ -30,7 +30,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v1
     - name: Build with Maven
-      run: mvn test --batch-mode
+      run: mvn test --batch-mode --file pom.xml
     - name: Publish Test Report
       if: success() || failure()
       uses: scacap/action-surefire-report@v1
