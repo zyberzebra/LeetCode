@@ -27,6 +27,8 @@ jobs:
         java-version: '21'
         distribution: 'zulu'
         cache: maven
+    - name: Checkout Code
+      uses: actions/checkout@v1
     - name: Build with Maven
       run: mvn test --batch-mode
     - name: Publish Test Report
